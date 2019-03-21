@@ -1,0 +1,3 @@
+hello.user: 'Merhaba Kullanıcı'
+hello %name%: 'Merhaba %name%'
+security: 'Geçersiz kimlik bilgileri'

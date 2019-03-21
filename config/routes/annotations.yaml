@@ -1,0 +1,8 @@
+controllers:
+    resource: ../../src/Controller/
+    type: annotation
+
+test-bundle-controller:
+    resource: ../../src/Berkeomeroglu/TestBundle/Controller/
+    type: annotation
+

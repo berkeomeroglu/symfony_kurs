@@ -1,0 +1,44 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    {# abs #}
+    {{ negativeVar|abs }}
+
+    <hr>
+
+    {{ sentence|capitalize }}
+
+    <hr>
+    {{ today|date('d M Y') }}
+
+    <hr>
+    {{ sehirler|last }}
+
+    <hr>
+    {{ sehirler|join(',') }}
+
+    <hr>
+    {{ sehirler|keys|join(',') }}
+
+    <hr>
+    {{ sehirler|length }}
+
+    <hr>
+    {{ sehirler|merge(['Urfa'])|join('--') }}
+
+    <hr>
+    {{ rawData|raw }}
+
+    <hr>
+    {{ sehirler|reverse|join('<') }}
+
+    <hr>
+    {{ sehirler|sort|join('-') }}
+
+    <hr>
+    {{ sehirler|sort|join('-')|upper }}
+
+    <hr>
+    {{ sentence }} -> {{ sentence|md5 }}
+
+{% endblock %}

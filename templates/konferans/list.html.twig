@@ -1,0 +1,11 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    {% for konferans in konferanslar %}
+        {{ konferans.isim }}
+        <a href="{{ asset('/uploads/afisler/' ~ konferans.afis ) }}" target="_blank">Dosyayı aç</a>
+        <hr>
+    {% endfor %}
+
+    <a href="{{ path('yeni-konferans') }}">Konferans Ekle</a>
+{% endblock %}

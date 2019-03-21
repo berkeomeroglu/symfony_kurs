@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <hr>
+<p>Hello test block</p>
+    {% include "template-tags/include-me.html.twig" %}
+{% endblock %}
+
+{% block for_test %}
+    {% for sehir in sehirler %}
+       {{ sehir }} <br>
+    {% endfor %}
+{% endblock %}
+
+{% block name %}Dünya <br>{% endblock %}
+
+{% block if_test %}
+    <hr>
+    {% if status %}
+        Status true olduğu için bu yazı yazıyor.
+    {% else %}
+        Status false olduğu için bu yazı yazıyor.
+    {% endif %}
+
+    <br>
+    {% if definedCheck is defined %}
+        Degisken defined olmuştur. : definedCheck is defined
+    {% else %}
+        Değişken defined olmamıştır. : definedCheck is defined
+    {% endif %}
+
+    <br>
+    {% if emptyCheck is empty %}
+        Değişken empty olduğu için bu yazı yazıyor. : emptyCheck is empty
+    {% else %}
+        Değişken empty olmadığından dolayı bu yazı yazıyor. : emptyCheck is empty
+    {% endif %}
+
+    <br>
+    {% if nullCheck is null %}
+        Nullcheck değiskeni null degerine sahip.
+    {% else %}
+        Nullcheck değiskeni {{ nullCheck }} degerine sahip.
+    {% endif %}
+
+    <br>
+    {% if (16 is even) %}
+        Girilen sayı çift sayıdır.
+    {% else %}
+        Girilen sayı tek sayıdır.
+    {% endif %}
+
+    <br>
+    {% if iterableCheck is iterable %}
+        iterableCheck is iterable
+    {% else %}
+        iterableCheck is not iterable
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    {% for gorev in gorevler %}
+        {{ gorev.gorev }}
+
+        <form action="{{ url('app_gorev_remove', {id: gorev.id}) }}" method="post">
+            <input type="hidden" name="token" value="{{ csrf_token('gorev-sil') }}">
+            <button type="submit">Sil</button>
+        </form>
+        <hr>
+    {% endfor %}
+    {{ 'hello %name%'|trans({"%name%":"Berke"}) }}<hr>
+    <a href="{{ path('app_gorev_new') }}">Görev Ekle</a>
+
+    {% if is_granted('ROLE_ADMIN') %}
+        <b>Bu yazıyı sadece admin görür.</b>
+    {% endif %}
+
+    {% if is_granted('ROLE_EDITOR') %}
+        <b>Bu yazıyı sadece editör görür.</b>
+    {% endif %}
+
+    {% if is_granted('ROLE_USER') %}
+        <b>Bu yazıyı sadece user görür.</b>
+    {% endif %}
+{% endblock %}
