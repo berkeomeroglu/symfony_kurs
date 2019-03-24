@@ -24,4 +24,8 @@
     {% if is_granted('ROLE_USER') %}
         <b>Bu yazıyı sadece user görür.</b>
     {% endif %}
+
+    {%  if is_granted('ROLE_SUPERADMIN') %}
+        <b>Bu yazıyı sadece süper admin görür.</b>
+    {% endif %}
 {% endblock %}

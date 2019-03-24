@@ -6,6 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Core\User\User;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 class GuvenlikController extends Controller
@@ -33,10 +34,9 @@ class GuvenlikController extends Controller
     public function userDetay()
     {
         $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
+        /** @var User $user */
         $user = $this->getUser();
 
-        dump($user);
-
-        return new Response('Kullanıcı detay sayfası');
+        return new Response('Kullanıcı detay sayfası, Username:  '. $user->getUsername(). ' Password: '. $user->getPassword(). ' roller: '. implode($user->getRoles()));
     }
 }
