@@ -20,4 +20,12 @@ class HelloController extends Controller
 
         return new Response($messageGenerator->helloMessage(). '---'. $session->getName());
     }
+
+    /**
+     * @Route("/merhaba-dunya")
+     */
+    public function merhabaDunya()
+    {
+        return new Response("Merhaba Dünya! Mükemmel bir güne uyandık!");
+    }
 }

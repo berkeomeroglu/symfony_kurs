@@ -13,3 +13,14 @@ framework:
     #fragments: true
     php_errors:
         log: true
+
+    cache:
+#        app: cache.adapter.apcu
+#        app: cache.adapter.doctrine
+#         app: cache.adapter.system
+#         app: cache.adapter.filesystem
+#         app: cache.adapter.psr6
+#         app: cache.adapter.redis
+#         app: cache.adapter.memcached
+
+
